@@ -4,7 +4,7 @@ export const fetchUsers = createAsyncThunk(
   "users/fetchUsers",
   async (token) => {
     const res = await fetch(
-      "https://task-management-app-ugzx.onrender.com/users",
+      "https://task-management-app-ugzx.onrender.com/api/v1/users",
       {
         headers: { Authorization: `Bearer ${token}` },
       }

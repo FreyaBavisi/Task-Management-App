@@ -1,4 +1,4 @@
-const API_URL = "https://task-management-app-ugzx.onrender.com/users";
+const API_URL = "https://task-management-app-ugzx.onrender.com/api/v1/users";
 
 const AuthService = {
   async login({ email, password }) {

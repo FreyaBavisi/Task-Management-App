@@ -17,7 +17,7 @@ function Signup() {
     setMessage("");
     try {
       const res = await fetch(
-        "https://task-management-app-ugzx.onrender.com/users/signup",
+        "https://task-management-app-ugzx.onrender.com/api/v1/users/signup",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
