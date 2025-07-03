@@ -3,9 +3,12 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const fetchProjects = createAsyncThunk(
   "projects/fetchProjects",
   async (token) => {
-    const res = await fetch("http://localhost:3000/api/v1/projects", {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const res = await fetch(
+      "https://task-management-app-ugzx.onrender.com/projects",
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
     if (!res.ok)
       throw new Error((await res.json()).message || "Failed to fetch projects");
     return await res.json();

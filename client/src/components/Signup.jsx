@@ -16,11 +16,14 @@ function Signup() {
     e.preventDefault();
     setMessage("");
     try {
-      const res = await fetch("http://localhost:3000/api/v1/users/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+      const res = await fetch(
+        "https://task-management-app-ugzx.onrender.com/users/signup",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        }
+      );
       const data = await res.json();
       if (res.ok) {
         setMessage("Signup successful! Redirecting to login...");

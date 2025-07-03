@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import UserEditModal from "./UserEditModal";
 import TaskEditModal from "./TaskEditModal";
 
-const API_URL = "http://localhost:3000/api/v1";
+const API_URL = "https://task-management-app-ugzx.onrender.com";
 
 function Dashboard() {
   const dispatch = useDispatch();
