@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -21,11 +23,12 @@ function Login() {
         }
       );
       const data = await res.json();
+      console.log("Login response:", data);
       if (res.ok && data.token) {
         localStorage.setItem("token", data.token);
         setMessage("Login successful! Redirecting to dashboard...");
         setTimeout(() => {
-          window.location.href = "/dashboard";
+          navigate("/dashboard");
         }, 1000);
       } else {
         setMessage(data.message || "Login failed");
