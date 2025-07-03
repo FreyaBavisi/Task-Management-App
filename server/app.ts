@@ -3,6 +3,8 @@ import bodyParser from "body-parser";
 import v1Router from "./src/routers/v1Router";
 import mongoose from "mongoose";
 import cors from "cors";
+import dotenv from "dotenv";
+dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
