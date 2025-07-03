@@ -10,10 +10,12 @@ const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors({
-  origin: "https://task-management-app-ugzx.onrender.com",
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: "https://task-management-app-frontend-ahbg.onrender.com",
+    credentials: true,
+  })
+);
 
 app.use("/api/v1", v1Router);
 const mongoUri = process.env.MONGODB_URI;
