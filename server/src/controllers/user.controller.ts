@@ -71,7 +71,14 @@ export async function getAllUsers(
     if (user.role === "admin") {
       users = await User.find({}, { password: 0 });
     } else if (user.role === "manager") {
-      users = await User.find({ teamId: Number(user.teamId) }, { password: 0 });
+      if (user.teamId) {
+        users = await User.find(
+          { teamId: Number(user.teamId) },
+          { password: 0 }
+        );
+      } else {
+        users = await User.find({}, { password: 0 });
+      }
     }
     res.json(users);
   } catch (err) {
